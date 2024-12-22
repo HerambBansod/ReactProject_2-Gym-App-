@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Hero from './components/Hero';
 import Generator from './components/Generator';
 import Workout from './components/Workout';
@@ -16,10 +16,18 @@ function App() {
     }
 
     const newWorkout = generateWorkout({ poison, muscles, goals }); // Pass as an object
-    setWorkout(newWorkout || []); 
+    setWorkout(newWorkout ?? []); 
 
-    window.location.href = '#Workout'; 
   }
+
+  useEffect(() => {
+    if (workout.length > 0) {
+      const workoutElement = document.getElementById('Workout');
+      if (workoutElement) {
+        workoutElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [workout]);
 
   return (
     <main className="min-h-screen flex flex-col bg-gradient-to-r from-slate-400 to-slate-850 text-black text-sm sm:text-base">
@@ -34,7 +42,7 @@ function App() {
         updateWorkout={updateWorkout}
       />
 
-      {workout.length > 0 && <Workout id="Workout" workout={workout} />}
+      {workout.length > 0 && <Workout  workout={workout} />}
     </main>
   );
 }

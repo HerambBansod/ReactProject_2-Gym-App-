@@ -23,7 +23,7 @@ export default function ExerciseCard(props) {
       </div>
       <div className='flex flex-col'>
         <h3 className='text-black text-sm'>Muscle Group</h3>
-        <p className='capitalize'>{exercise.muscle.join(' & ')}</p>
+        <p className='capitalize'>{exercise.muscles.join(' & ')}</p>
       </div>
 
       <div className='grid grid-cols-2 sm:grid-cols-4 sm:place-items-center gap-2'>
