@@ -4,8 +4,6 @@ import SectionWrap from './SectionWrap';
 
 export default function Workout(props) {
   const { workout = [] } = props;
-  console.log(workout);
-
   return (
     <SectionWrap Header="Craft Your Fitness Journey" title={['Ready', 'Set', 'Sweat!']}>
       <div id="Workout" className="flex flex-col gap-4">
