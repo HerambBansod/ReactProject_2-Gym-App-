@@ -2,6 +2,7 @@ import { EXERCISES, SCHEMES, TEMPOS, WORKOUTS } from "./exercise";
 
 const exercises = exercisesFlattener(EXERCISES);
 
+
 export function generateWorkout({ muscles, poison: workout, goals }) {
     let exer = Object.keys(exercises);
     exer = exer.filter((key) => exercises[key].meta.environment !== "home");
